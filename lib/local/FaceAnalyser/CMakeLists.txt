@@ -32,8 +32,8 @@ target_include_directories(FaceAnalyser PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:$<INSTALL_PREFIX>/include/OpenFace>)
 
-target_include_directories(FaceAnalyser PRIVATE ${FACEANALYSER_SOURCE_DIR}/include)
-target_include_directories(FaceAnalyser PUBLIC ${TBB_ROOT_DIR}/include)
+# target_include_directories(FaceAnalyser PRIVATE ${FACEANALYSER_SOURCE_DIR}/include)
+# target_include_directories(FaceAnalyser PUBLIC ${TBB_ROOT_DIR}/include)
 target_include_directories(FaceAnalyser PUBLIC ${Boost_INCLUDE_DIRS})
 target_include_directories(FaceAnalyser PUBLIC ${Boost_INCLUDE_DIRS}/boost)
 target_include_directories(FaceAnalyser PUBLIC ${OpenCV_INCLUDE_DIRS})

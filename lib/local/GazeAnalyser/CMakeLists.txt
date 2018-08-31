@@ -19,8 +19,8 @@ target_include_directories(GazeAnalyser PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:$<INSTALL_PREFIX>/include/OpenFace>)
 
-target_include_directories(GazeAnalyser PRIVATE ${GAZEANALYSER_SOURCE_DIR}/include)
-target_include_directories(GazeAnalyser PUBLIC ${TBB_ROOT_DIR}/include)
+# target_include_directories(GazeAnalyser PRIVATE ${GAZEANALYSER_SOURCE_DIR}/include)
+# target_include_directories(GazeAnalyser PUBLIC ${TBB_ROOT_DIR}/include)
 target_include_directories(GazeAnalyser PUBLIC ${Boost_INCLUDE_DIRS})
 target_include_directories(GazeAnalyser PUBLIC ${Boost_INCLUDE_DIRS}/boost)
 target_include_directories(GazeAnalyser PUBLIC ${OpenCV_INCLUDE_DIRS})
