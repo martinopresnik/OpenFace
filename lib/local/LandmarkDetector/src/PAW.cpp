@@ -328,7 +328,7 @@ void PAW::Warp(const cv::Mat& image_to_warp, cv::Mat& destination_image, const c
 	this->WarpRegion(map_x, map_y);
 
 	// Do the actual warp (with bi-linear interpolation)
-	remap(image_to_warp, destination_image, map_x, map_y, CV_INTER_LINEAR);
+	remap(image_to_warp, destination_image, map_x, map_y, cv::INTER_LINEAR);
 
 }
 

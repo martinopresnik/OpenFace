@@ -4,7 +4,7 @@
 include(CMakeFindDependencyMacro)
 
 find_dependency(dlib 18.18)
-find_dependency(OpenCV 3.3)
+find_dependency(OpenCV 4.1)
 find_dependency(Boost)
 find_dependency(BLAS)
 find_dependency(TBB)

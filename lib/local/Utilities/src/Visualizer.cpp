@@ -318,7 +318,7 @@ void Visualizer::SetObservationActionUnits(const std::vector<std::pair<std::stri
 				cv::rectangle(action_units_image, cv::Point(MARGIN_X, offset),
 					cv::Point((int)(MARGIN_X + AU_TRACKBAR_LENGTH * intensity / 5.0), offset + AU_TRACKBAR_HEIGHT),
 					cv::Scalar(128, 128, 128),
-					CV_FILLED);
+					cv::FILLED);
 			}
 			else
 			{

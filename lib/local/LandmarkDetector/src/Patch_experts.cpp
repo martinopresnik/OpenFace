@@ -246,7 +246,7 @@ void Patch_experts::Response(vector<cv::Mat_<float> >& patch_expert_responses, c
 		// Extract the region of interest around the current landmark location
 		cv::Mat_<float> area_of_interest(area_of_interest_height, area_of_interest_width, 0.0f);
 
-		cv::warpAffine(grayscale_image, area_of_interest, sim, area_of_interest.size(), cv::WARP_INVERSE_MAP + CV_INTER_LINEAR);		
+		cv::warpAffine(grayscale_image, area_of_interest, sim, area_of_interest.size(), cv::WARP_INVERSE_MAP + cv::INTER_LINEAR);		
 
 		// Get intensity response either from the SVR, CCNF, or CEN patch experts (prefer CEN as they are the most accurate so far)
 		if (!cen_expert_intensity.empty())
@@ -280,7 +280,7 @@ void Patch_experts::Response(vector<cv::Mat_<float> >& patch_expert_responses, c
 						// Extract the region of interest around the current landmark location
 						cv::Mat_<float> area_of_interest_r(area_of_interest_height, area_of_interest_width, 0.0f);
 
-						cv::warpAffine(grayscale_image, area_of_interest_r, sim_r, area_of_interest_r.size(), cv::WARP_INVERSE_MAP + CV_INTER_LINEAR);
+						cv::warpAffine(grayscale_image, area_of_interest_r, sim_r, area_of_interest_r.size(), cv::WARP_INVERSE_MAP + cv::INTER_LINEAR);
 
 						cv::Mat_<float> prealloc_mat_right = preallocated_im2col[mirror_id][im2col_size];
 

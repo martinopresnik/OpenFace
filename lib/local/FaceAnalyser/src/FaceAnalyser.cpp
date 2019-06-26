@@ -370,7 +370,7 @@ void FaceAnalyser::AddNextFrame(const cv::Mat& frame, const cv::Mat_<float>& det
 
 	if (aligned_face_for_output.channels() == 3 && out_grayscale)
 	{
-		cvtColor(aligned_face_for_output, aligned_face_for_output, CV_BGR2GRAY);
+		cvtColor(aligned_face_for_output, aligned_face_for_output, cv::COLOR_BGR2GRAY);
 	}
 
 	// Extract HOG descriptor from the frame and convert it to a useable format

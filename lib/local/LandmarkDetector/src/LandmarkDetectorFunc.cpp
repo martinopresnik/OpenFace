@@ -194,7 +194,7 @@ void CorrectGlobalParametersVideo(const cv::Mat_<uchar> &grayscale_image, CLNF& 
 		
 	// Resizing the template			
 	cv::Mat corr_out;
-	cv::matchTemplate(image, clnf_model.face_template, corr_out, CV_TM_CCOEFF_NORMED);
+	cv::matchTemplate(image, clnf_model.face_template, corr_out, cv::TM_CCOEFF_NORMED);
 
 	// Actually matching it
 	//double min, max;

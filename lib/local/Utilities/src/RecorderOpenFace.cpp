@@ -428,7 +428,7 @@ void RecorderOpenFace::WriteObservationTracked()
 				std::string output_codec = params.outputCodec();
 				try
 				{
-					video_writer.open(media_filename, CV_FOURCC(output_codec[0], output_codec[1], output_codec[2], output_codec[3]), params.outputFps(), vis_to_out.size(), true);
+					video_writer.open(media_filename, cv::VideoWriter::fourcc(output_codec[0], output_codec[1], output_codec[2], output_codec[3]), params.outputFps(), vis_to_out.size(), true);
 
 					if (!video_writer.isOpened())
 					{

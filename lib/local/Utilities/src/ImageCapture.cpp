@@ -358,7 +358,7 @@ cv::Mat ImageCapture::GetNextImage()
 	}
 		
 	// Load the image as an 8 bit RGB
-	latest_frame = cv::imread(image_files[frame_num], CV_LOAD_IMAGE_COLOR);
+	latest_frame = cv::imread(image_files[frame_num], cv::IMREAD_COLOR);
 
 	if (latest_frame.empty())
 	{

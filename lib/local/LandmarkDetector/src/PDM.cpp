@@ -654,7 +654,7 @@ void PDM::CalcParams(cv::Vec6f& out_params_global, cv::Mat_<float>& out_params_l
 		
 		// Solve for the parameter update (from Baltrusaitis 2013 based on eq (36) Saragih 2011)
 		cv::Mat_<float> param_update;
-		cv::solve(Hessian, J_w_t_m, param_update, CV_CHOLESKY);
+		cv::solve(Hessian, J_w_t_m, param_update, cv::DECOMP_CHOLESKY);
 
 		// To not overshoot, have the gradient decent rate a bit smaller
 		param_update = 0.75 * param_update;

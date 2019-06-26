@@ -264,11 +264,11 @@ void CCNF_neuron::Response(const cv::Mat_<float> &im, cv::Mat_<double> &im_dft, 
 	if(neuron_type == 3)
 	{
 		// In case of depth we use per area, rather than per patch normalisation
-		matchTemplate_m(I, im_dft, integral_img, integral_img_sq, weights, weights_dfts, resp, CV_TM_CCOEFF); // the linear multiplication, efficient calc of response
+		matchTemplate_m(I, im_dft, integral_img, integral_img_sq, weights, weights_dfts, resp, cv::TM_CCOEFF); // the linear multiplication, efficient calc of response
 	}
 	else
 	{
-		matchTemplate_m(I, im_dft, integral_img, integral_img_sq, weights, weights_dfts, resp, CV_TM_CCOEFF_NORMED); // the linear multiplication, efficient calc of response
+		matchTemplate_m(I, im_dft, integral_img, integral_img_sq, weights, weights_dfts, resp, cv::TM_CCOEFF_NORMED); // the linear multiplication, efficient calc of response
 	}
 	
 	cv::MatIterator_<float> p = resp.begin();

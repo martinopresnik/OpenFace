@@ -150,11 +150,11 @@ namespace LandmarkDetector
 	void matchTemplate_m(const cv::Mat_<float>& input_img, cv::Mat_<double>& img_dft, cv::Mat& _integral_img, cv::Mat& _integral_img_sq, const cv::Mat_<float>&  templ, map<int, cv::Mat_<double> >& templ_dfts, cv::Mat_<float>& result, int method)
 	{
 
-		int numType = method == CV_TM_CCORR || method == CV_TM_CCORR_NORMED ? 0 :
-			method == CV_TM_CCOEFF || method == CV_TM_CCOEFF_NORMED ? 1 : 2;
-		bool isNormed = method == CV_TM_CCORR_NORMED ||
-			method == CV_TM_SQDIFF_NORMED ||
-			method == CV_TM_CCOEFF_NORMED;
+		int numType = method == cv::TM_CCORR || method == cv::TM_CCORR_NORMED ? 0 :
+			method == cv::TM_CCOEFF || method == cv::TM_CCOEFF_NORMED ? 1 : 2;
+		bool isNormed = method == cv::TM_CCORR_NORMED ||
+			method == cv::TM_SQDIFF_NORMED ||
+			method == cv::TM_CCOEFF_NORMED;
 
 		// Assume result is defined properly
 		if (result.empty())
@@ -164,7 +164,7 @@ namespace LandmarkDetector
 		}
 		LandmarkDetector::crossCorr_m(input_img, img_dft, templ, templ_dfts, result);
 
-		if (method == CV_TM_CCORR)
+		if (method == cv::TM_CCORR)
 			return;
 
 		double invArea = 1. / ((double)templ.rows * templ.cols);
@@ -174,7 +174,7 @@ namespace LandmarkDetector
 		double *q0 = 0, *q1 = 0, *q2 = 0, *q3 = 0;
 		double templNorm = 0, templSum2 = 0;
 
-		if (method == CV_TM_CCOEFF)
+		if (method == cv::TM_CCOEFF)
 		{
 			// If it has not been precomputed compute it now
 			if (_integral_img.empty())
@@ -200,7 +200,7 @@ namespace LandmarkDetector
 
 			templNorm = templSdv[0] * templSdv[0] + templSdv[1] * templSdv[1] + templSdv[2] * templSdv[2] + templSdv[3] * templSdv[3];
 
-			if (templNorm < DBL_EPSILON && method == CV_TM_CCOEFF_NORMED)
+			if (templNorm < DBL_EPSILON && method == cv::TM_CCOEFF_NORMED)
 			{
 				result.setTo(1.0);
 				return;
@@ -276,7 +276,7 @@ namespace LandmarkDetector
 					else if (fabs(num) < t*1.125)
 						num = num > 0 ? 1 : -1;
 					else
-						num = method != CV_TM_SQDIFF_NORMED ? 0 : 1;
+						num = method != cv::TM_SQDIFF_NORMED ? 0 : 1;
 				}
 
 				rrow[j] = (float)num;
